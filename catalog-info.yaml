@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hkbthc49f-go-gitops
+  description: This is GitOps manifest for hkbthc49f-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=hkbthc49f-go
+    backstage.io/kubernetes-id: hkbthc49f-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hkbthc49f-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hkbthc49f-go
